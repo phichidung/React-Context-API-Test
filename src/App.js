@@ -1,20 +1,27 @@
 import React, { Component } from 'react';
+// Without Context
 import RedWithoutReactContext from "./RedWithoutReactContext/Red";
-import RedHaveReactContext from "./RedHaveReactContext/AppProvider";
+// Have Context
+import NumberProvider from "./RedHaveReactContext/NumberProvider";
+import NumberContext from "./RedHaveReactContext/contexts/NumberContext";
 
 export default class App extends Component {
 
     render() {
         return (
-            <div>
-                <h1 style={{ textAlign: "center" }}>This is react-context-api-test</h1>
+            <NumberProvider>
+                <h1 style={{ textAlign: "center" }}>Without Context</h1>
                 <div style={{ display: "flex", justifyContent: "center" }}>
                     <RedWithoutReactContext/>
                 </div>
-                <div style={{ marginTop: 20, display: "flex", justifyContent: "center" }}>
-                    <RedHaveReactContext/>
+
+                <h1 style={{ textAlign: "center" }}>Have Context</h1>
+                <div style={{ display: "flex", justifyContent: "center", marginTop: 50 }}>
+                    <NumberContext.Consumer>
+                        {(context) => <h2>{context.number}</h2>}
+                    </NumberContext.Consumer>
                 </div>
-            </div>
+            </NumberProvider>
         );
     }
 }

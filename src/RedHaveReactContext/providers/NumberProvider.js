@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-
-import NumberContext from "./contexts/NumberContext";
+import NumberContext from "../contexts/NumberContext";
 
 export default class extends Component {
 

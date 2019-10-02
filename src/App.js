@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import RedWithoutReactContext from "./RedWithoutReactContext/Red";
+import RedHaveReactContext from "./RedHaveReactContext/AppProvider";
 
 export default class App extends Component {
 
@@ -9,6 +10,9 @@ export default class App extends Component {
                 <h1 style={{ textAlign: "center" }}>This is react-context-api-test</h1>
                 <div style={{ display: "flex", justifyContent: "center" }}>
                     <RedWithoutReactContext/>
+                </div>
+                <div style={{ marginTop: 20, display: "flex", justifyContent: "center" }}>
+                    <RedHaveReactContext/>
                 </div>
             </div>
         );
